@@ -1,4 +1,68 @@
-span{
+span {
     color: orange;
-    
+
 }
+
+section {
+    /* background-color: yellow; */
+    background-image: url("../images/main-visual.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /* ポジションが　左右　上下 */
+    background-position: center center;
+    /* 高さ */
+    height: 480px;
+    /* 幅 */
+    width: 100%;
+    padding-top: 120px;
+    /* 余白計算を含み計算にする */
+    box-sizing: border-box;
+}
+
+.wrapper {
+    /* 最大でも1000pxまで */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+p {
+    color: white;
+    text-align: center;
+}
+
+.main-catch{
+    font-size:48px;
+    font-weight: bold;
+}
+
+.cta-button {
+    color: white;
+    /* 背景色をオレンジ */
+    background-color: orange;
+    /* 下線をなくす */
+    text-decoration: none;
+    /* 太字 */
+
+    font-weight: bold;
+    /* 内側の余白 */
+    padding: 3% 5%; /*上下　左右*/
+    /* 角の丸み 左上　右上　右下　左下*/
+    border-radius: 8px;
+
+    /* 性格をpやdivと同じに捻じ曲げる */
+    display: block; /*もともとはinline aはデフォルトでインラインなのでマージン、テキストアライン効かない これは隠れプロパティ　これをblockにする。divやpは隠れプロパティブロック*/
+      
+    text-align: center;
+    width: 30%;
+    /* 外側の余白 */
+    /* margin-top: 20px; */
+    /* margin-right: auto; */
+    /* margin-left: auto; */
+    margin:20px auto 0;
+    
+
+  
+}
+
