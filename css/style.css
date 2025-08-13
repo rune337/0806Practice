@@ -1,9 +1,40 @@
+h2 {
+    font-size: 2.2rem;
+    /* text-decoration: underline; 文字への下線 */
+    border-bottom: 2px solid #ff6600;
+}
+
+a {
+    color: #07c;
+    text-decoration: none;
+    transition: .4s;
+
+}
+
+img {
+    border-radius: 8px;
+}
+
+a:hover {
+    color: #5af;
+    /* ホバーしたときどのくらいで状況が変わるかの秒数指定 */
+
+}
+
 span {
     color: orange;
 
 }
 
-section {
+img {
+    /*親の幅以上に大きくならない*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*大きさによって比率は崩さない 初期値中央を残す*/
+}
+
+.main-visual {
     /* background-color: yellow; */
     background-image: url("../images/main-visual.png");
     background-repeat: no-repeat;
@@ -18,6 +49,12 @@ section {
     padding-top: 120px;
     /* 余白計算を含み計算にする */
     box-sizing: border-box;
+    color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .wrapper {
@@ -28,12 +65,14 @@ section {
 
 
 p {
-    color: white;
-    text-align: center;
+
+    /* 行間 */
+    line-height: 1.8;
+
 }
 
-.main-catch{
-    font-size:48px;
+.main-catch {
+    font-size: 42px;
     font-weight: bold;
 }
 
@@ -47,22 +86,257 @@ p {
 
     font-weight: bold;
     /* 内側の余白 */
-    padding: 3% 5%; /*上下　左右*/
+    padding: 3% 5%;
+    /*上下　左右*/
     /* 角の丸み 左上　右上　右下　左下*/
     border-radius: 8px;
 
     /* 性格をpやdivと同じに捻じ曲げる */
-    display: block; /*もともとはinline aはデフォルトでインラインなのでマージン、テキストアライン効かない これは隠れプロパティ　これをblockにする。divやpは隠れプロパティブロック*/
-      
+    display: inline-block;
+    /*もともとはinline aはデフォルトでインラインなのでマージン、テキストアライン効かない これは隠れプロパティ　これをblockにする。divやpは隠れプロパティブロック*/
+
     text-align: center;
-    width: 30%;
+
     /* 外側の余白 */
     /* margin-top: 20px; */
     /* margin-right: auto; */
     /* margin-left: auto; */
-    margin:20px auto 0;
-    
+    margin-top: 20px;
 
-  
+
+
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    /*両端揃え*/
+    align-items: center;
+    /*要素の進行方向に対して得垂直方向を中央揃え*/
+    padding: 10px 40px;
+    /* 影 */
+    box-shadow: 0 2px 5px #333;
+
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    gap: 10px;
+    /*flexの子要素の隙間を指定*/
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 30px;
+    padding-bottom: 80px;
+}
+
+.gallery img:first-child {
+    grid-column: 1/4;
+    grid-row: 1/5;
+}
+
+.gallery img:nth-child(2) {
+    grid-column: 4/6;
+    grid-row: 3/5;
+
+}
+
+.gallery img:last-child {
+    grid-column: 4/6;
+    grid-row: 1/3;
+
+
+}
+
+
+.container {
+    padding: 5% 3%;
+    margin: 40px 0;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    width: 100%;
+}
+
+/* 特徴セクション (display:grid) */
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.feature-item img {
+    width: 100%;
+    aspect-ratio: 10/6;
+    height: auto;
+    object-fit: cover;
+}
+
+.feature-item p {
+    color: black;
+}
+
+/* 料金表 */
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.price-table th,
+.price-table td {
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: left;
+}
+
+.price-table th {
+    background-color: #f2f2f2;
+}
+
+/* 受講の流れ */
+.flow-list {
+    list-style: decimal;
+    padding-left: 20px;
+}
+
+
+.flow-list li {
+    margin-bottom: 15px;
+}
+
+/* フォーム */
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.contact-form label {
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form input[type="submit"] {
+    width: 200px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+
+main {
+    /* 色の種類は3種類 */
+    /* カラーコード #からはじまる6桁 赤2ケタ 緑2ケタ 青2ケタ <00~ff>*/
+    /* RGB値 rgb() に指定する10進数が3つ 赤、緑。青の3つの指定 0~255*/
+    /* 色名 */
+
+    /* 光の三原色 赤成分・緑成分・青成分 */
+
+    background-color: #f9f9f9;
+    background-color: rgb(240, 240, 240);
+
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+}
+
+footer ul {
+    justify-content: center;
+    gap: 40px;
+    margin-top: 10px;
+}
+
+footer a {
+    color: #fff;
+
+}
+
+
+/* --- レスポンシブ対応 (スマートフォン表示) --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav li {
+        margin: 5px 0;
+    }
+
+    .main-catch {
+        font-size: 42px;
+        line-height: 1.2;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        /* 1列にする */
+    }
+
+    main {
+        width: 100%;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 300px);
+    }
+
+    .gallery img:first-child {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    .gallery img:nth-child(2) {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    .gallery img:last-child {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+}
